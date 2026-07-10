@@ -143,7 +143,7 @@ export default function Home() {
                 ☰ {t("history.title")}
               </button>
               <span className="current">
-                {active ? active.patientLabel : t("wizard.selectPatient")}
+                {active ? active.patientLabel : t("wizard.noPatient")}
               </span>
             </div>
             {!active && <div className="card muted">{t("wizard.selectPatient")}</div>}

@@ -49,6 +49,7 @@ const en: Dict = {
   "wizard.submit": "Recommendation",
   "wizard.reset": "Clear answers",
   "wizard.selectPatient": "Select or create a patient session to begin.",
+  "wizard.noPatient": "No patient selected",
 
   "result.title": "Recommendation",
   "result.score": "Likelihood score",
@@ -151,6 +152,7 @@ const nl: Dict = {
   "wizard.submit": "Aanbeveling",
   "wizard.reset": "Antwoorden wissen",
   "wizard.selectPatient": "Selecteer of maak een patiëntsessie om te beginnen.",
+  "wizard.noPatient": "Geen patiënt geselecteerd",
 
   "result.title": "Advies",
   "result.score": "Waarschijnlijkheidsscore",
@@ -251,6 +253,7 @@ const fr: Dict = {
   "wizard.submit": "Recommandation",
   "wizard.reset": "Effacer les réponses",
   "wizard.selectPatient": "Sélectionnez ou créez une session patient pour commencer.",
+  "wizard.noPatient": "Aucun patient sélectionné",
 
   "result.title": "Recommandation",
   "result.score": "Score de probabilité",
@@ -351,6 +354,7 @@ const de: Dict = {
   "wizard.submit": "Empfehlung",
   "wizard.reset": "Antworten löschen",
   "wizard.selectPatient": "Wählen oder erstellen Sie eine Patientensitzung, um zu beginnen.",
+  "wizard.noPatient": "Kein Patient ausgewählt",
 
   "result.title": "Empfehlung",
   "result.score": "Wahrscheinlichkeits-Score",
@@ -451,6 +455,7 @@ const it: Dict = {
   "wizard.submit": "Raccomandazione",
   "wizard.reset": "Cancella risposte",
   "wizard.selectPatient": "Seleziona o crea una sessione paziente per iniziare.",
+  "wizard.noPatient": "Nessun paziente selezionato",
 
   "result.title": "Raccomandazione",
   "result.score": "Punteggio di probabilità",
@@ -551,6 +556,7 @@ const es: Dict = {
   "wizard.submit": "Recomendación",
   "wizard.reset": "Borrar respuestas",
   "wizard.selectPatient": "Seleccione o cree una sesión de paciente para empezar.",
+  "wizard.noPatient": "Ningún paciente seleccionado",
 
   "result.title": "Recomendación",
   "result.score": "Puntuación de probabilidad",
