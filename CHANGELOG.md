@@ -62,6 +62,21 @@ this project cold understands the current state, decisions, and remaining work.
 - **Sticky bottom action bar** for Reset/Calculate on mobile (app-like).
 - Cards go edge-to-edge on mobile; rounded 20px; refreshed palette/shadows.
 
+### v1.2 — Overflow + full localization fixes
+- **No more horizontal scroll on small phones (e.g. iPhone 12 mini, 360px):**
+  root now uses `overflow-x: clip` + `max-width:100%`, so the off-canvas
+  drawers (translated off-screen) no longer extend the scrollable width.
+  Grid columns use `minmax(0, 1fr)` and `section { min-width: 0 }` so content
+  can shrink instead of pushing the layout wide. `clip` (not `hidden`) keeps
+  the sticky header working.
+- **About & FAQ are now fully localized.** Previously only the header/footer
+  translated; the page bodies were hardcoded Dutch. Content moved to
+  `src/i18n/content.ts` (all 6 languages) and rendered by client components
+  (`AboutContent`, `FaqContent`) that react to the language context — so
+  switching language updates the open page immediately and persists across
+  navigation. Static HTML is pre-rendered in Dutch (primary language) and the
+  FAQPage JSON-LD is retained for SEO/AEO.
+
 ### How to run
 ```
 npm install

@@ -24,6 +24,12 @@
 html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 100%;
+  /* clip (not hidden) prevents off-canvas drawers from creating horizontal
+     scroll, without turning the body into a scroll container that would
+     break the sticky header. */
+  overflow-x: clip;
   background: var(--bg);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -127,7 +133,8 @@ select.lang {
 }
 
 /* ---------------- App layout ---------------- */
-.app-shell { display: grid; grid-template-columns: 300px 1fr; gap: 22px; padding: 22px 0 60px; align-items: start; }
+.app-shell { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 22px; padding: 22px 0 60px; align-items: start; max-width: 100%; }
+.app-shell > section { min-width: 0; }
 .history-col { position: sticky; top: calc(var(--header-h) + 22px); }
 
 /* Mobile toolbar (patients button + current patient) — hidden on desktop */
@@ -230,7 +237,7 @@ input:focus, textarea:focus, select:focus { outline: none; border-color: var(--p
   .nav { display: none; }
   .hamburger { display: inline-flex; }
 
-  .app-shell { grid-template-columns: 1fr; gap: 0; padding: 0 0 100px; }
+  .app-shell { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0 0 100px; }
 
   /* history becomes a left drawer */
   .history-col {
