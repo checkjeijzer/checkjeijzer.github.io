@@ -46,7 +46,7 @@ const en: Dict = {
   "wizard.section.symptoms": "Symptoms",
   "wizard.section.risk": "Risk factors",
   "wizard.optionalHint": "Optional — leave blank if unknown",
-  "wizard.submit": "Calculate recommendation",
+  "wizard.submit": "Recommendation",
   "wizard.reset": "Clear answers",
   "wizard.selectPatient": "Select or create a patient session to begin.",
 
@@ -148,7 +148,7 @@ const nl: Dict = {
   "wizard.section.symptoms": "Symptomen",
   "wizard.section.risk": "Risicofactoren",
   "wizard.optionalHint": "Optioneel — laat leeg indien onbekend",
-  "wizard.submit": "Bereken advies",
+  "wizard.submit": "Aanbeveling",
   "wizard.reset": "Antwoorden wissen",
   "wizard.selectPatient": "Selecteer of maak een patiëntsessie om te beginnen.",
 
@@ -248,7 +248,7 @@ const fr: Dict = {
   "wizard.section.symptoms": "Symptômes",
   "wizard.section.risk": "Facteurs de risque",
   "wizard.optionalHint": "Facultatif — laissez vide si inconnu",
-  "wizard.submit": "Calculer la recommandation",
+  "wizard.submit": "Recommandation",
   "wizard.reset": "Effacer les réponses",
   "wizard.selectPatient": "Sélectionnez ou créez une session patient pour commencer.",
 
@@ -348,7 +348,7 @@ const de: Dict = {
   "wizard.section.symptoms": "Symptome",
   "wizard.section.risk": "Risikofaktoren",
   "wizard.optionalHint": "Optional — leer lassen, wenn unbekannt",
-  "wizard.submit": "Empfehlung berechnen",
+  "wizard.submit": "Empfehlung",
   "wizard.reset": "Antworten löschen",
   "wizard.selectPatient": "Wählen oder erstellen Sie eine Patientensitzung, um zu beginnen.",
 
@@ -448,7 +448,7 @@ const it: Dict = {
   "wizard.section.symptoms": "Sintomi",
   "wizard.section.risk": "Fattori di rischio",
   "wizard.optionalHint": "Facoltativo — lascia vuoto se sconosciuto",
-  "wizard.submit": "Calcola la raccomandazione",
+  "wizard.submit": "Raccomandazione",
   "wizard.reset": "Cancella risposte",
   "wizard.selectPatient": "Seleziona o crea una sessione paziente per iniziare.",
 
@@ -548,7 +548,7 @@ const es: Dict = {
   "wizard.section.symptoms": "Síntomas",
   "wizard.section.risk": "Factores de riesgo",
   "wizard.optionalHint": "Opcional — deje en blanco si se desconoce",
-  "wizard.submit": "Calcular recomendación",
+  "wizard.submit": "Recomendación",
   "wizard.reset": "Borrar respuestas",
   "wizard.selectPatient": "Seleccione o cree una sesión de paciente para empezar.",
 

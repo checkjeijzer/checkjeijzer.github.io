@@ -77,6 +77,10 @@ export default function Wizard({
   onReset: () => void;
 }) {
   const { t } = useI18n();
+  const answeredCount = Object.values(answers).filter(
+    (v) => v !== undefined && v !== "" && v !== null
+  ).length;
+  const canSubmit = answeredCount > 0;
   return (
     <div className="card">
       <p className="wizard-intro">{t("wizard.intro")}</p>
@@ -96,11 +100,11 @@ export default function Wizard({
         </div>
       ))}
       <div className="wizard-actions">
-        <button className="btn ghost" onClick={onReset}>
-          {t("wizard.reset")}
-        </button>
-        <button className="btn" onClick={onSubmit}>
+        <button className="btn" onClick={onSubmit} disabled={!canSubmit}>
           {t("wizard.submit")}
+        </button>
+        <button className="btn ghost" onClick={onReset} disabled={answeredCount === 0}>
+          {t("wizard.reset")}
         </button>
       </div>
     </div>

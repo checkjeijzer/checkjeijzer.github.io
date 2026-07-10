@@ -77,6 +77,13 @@ this project cold understands the current state, decisions, and remaining work.
   navigation. Static HTML is pre-rendered in Dutch (primary language) and the
   FAQPage JSON-LD is retained for SEO/AEO.
 
+### v1.3 — Action button fixes
+- Submit label shortened to just "Recommendation" (localised per language).
+- Action buttons are now **in-flow, full-width and stacked** on mobile (primary
+  on top) instead of a floating fixed bar — this removes the case where the
+  browser's bottom chrome clipped the button off-screen.
+- Submit (and Reset) are **disabled until at least one question is answered**.
+
 ### How to run
 ```
 npm install
