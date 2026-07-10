@@ -50,6 +50,18 @@ this project cold understands the current state, decisions, and remaining work.
 - [x] 6. GitHub Actions deploy + this changelog
 - [x] 7. Verify build passes (static export in ./out)
 
+### v1.1 — Mobile UX rework
+- Header collapses to a **hamburger** on ≤860px, opening a right **slide-in nav
+  drawer** (nav links + language + lock) with overlay and body-scroll lock.
+- Patient history becomes a **left slide-in drawer** on mobile, opened from a
+  sticky **mobile toolbar** ("☰ Patient sessions" + current patient name).
+  Stays a sticky sidebar column on desktop.
+- **Larger touch inputs**: 16px font (prevents iOS zoom), 50px min-height fields
+  and choice chips, focus ring, unit shown inline inside the input.
+- Choice chips reflow to **2-per-row** (1 on very narrow screens).
+- **Sticky bottom action bar** for Reset/Calculate on mobile (app-like).
+- Cards go edge-to-edge on mobile; rounded 20px; refreshed palette/shadows.
+
 ### How to run
 ```
 npm install

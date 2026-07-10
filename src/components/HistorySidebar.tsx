@@ -8,12 +8,14 @@ export default function HistorySidebar({
   onSelect,
   onNew,
   onDelete,
+  onClose,
 }: {
   sessions: Session[];
   activeId: string | null;
   onSelect: (id: string) => void;
   onNew: () => void;
   onDelete: (id: string) => void;
+  onClose?: () => void; // shown as a close button on the mobile drawer
 }) {
   const { t, lang } = useI18n();
   const fmt = (ts: number) =>
@@ -21,7 +23,14 @@ export default function HistorySidebar({
 
   return (
     <aside className="sidebar">
-      <h2>{t("history.title")}</h2>
+      <div className="drawer-head">
+        <h2 style={{ margin: 0 }}>{t("history.title")}</h2>
+        {onClose && (
+          <button className="icon-btn hide-desktop" aria-label="Close" onClick={onClose}>
+            ✕
+          </button>
+        )}
+      </div>
       <button className="btn block" onClick={onNew}>
         {t("history.new")}
       </button>
@@ -39,7 +48,6 @@ export default function HistorySidebar({
             <span className="name">{s.patientLabel}</span>
             <span className="sub">
               {fmt(s.updatedAt)}
-              {"  "}
               <span className={`badge ${s.completed ? "done" : "prog"}`}>
                 {s.completed ? t("history.completed") : t("history.inProgress")}
               </span>

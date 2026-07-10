@@ -23,6 +23,7 @@ export default function Home() {
   const [sessions, setSessions] = useState<Session[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [view, setView] = useState<"wizard" | "result">("wizard");
+  const [historyOpen, setHistoryOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -49,16 +50,19 @@ export default function Home() {
   }
 
   function handleNew() {
-    const label = (prompt(t("history.newPrompt")) || "").trim();
-    if (label === null) return;
+    const raw = prompt(t("history.newPrompt"));
+    if (raw === null) return; // cancelled
+    const label = raw.trim();
     const s = newSession(label || "Patient");
     persist(s);
     setActiveId(s.id);
     setView("wizard");
+    setHistoryOpen(false);
   }
 
   function handleSelect(id: string) {
     setActiveId(id);
+    setHistoryOpen(false);
   }
 
   function handleDelete(id: string) {
@@ -116,14 +120,32 @@ export default function Home() {
       />
       <main className="container">
         <div className="app-shell">
-          <HistorySidebar
-            sessions={sessions}
-            activeId={activeId}
-            onSelect={handleSelect}
-            onNew={handleNew}
-            onDelete={handleDelete}
+          {/* Overlay for the mobile history drawer */}
+          <div
+            className={`overlay ${historyOpen ? "show" : ""}`}
+            onClick={() => setHistoryOpen(false)}
+            aria-hidden
           />
+          <div className={`history-col ${historyOpen ? "open" : ""}`}>
+            <HistorySidebar
+              sessions={sessions}
+              activeId={activeId}
+              onSelect={handleSelect}
+              onNew={handleNew}
+              onDelete={handleDelete}
+              onClose={() => setHistoryOpen(false)}
+            />
+          </div>
           <section>
+            {/* Mobile-only toolbar to open patient drawer */}
+            <div className="mobile-bar">
+              <button className="patients-btn" onClick={() => setHistoryOpen(true)}>
+                ☰ {t("history.title")}
+              </button>
+              <span className="current">
+                {active ? active.patientLabel : t("wizard.selectPatient")}
+              </span>
+            </div>
             {!active && <div className="card muted">{t("wizard.selectPatient")}</div>}
             {active && view === "wizard" && (
               <Wizard

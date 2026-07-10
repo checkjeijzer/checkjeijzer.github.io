@@ -79,7 +79,7 @@ export default function Wizard({
   const { t } = useI18n();
   return (
     <div className="card">
-      <p className="muted" style={{ marginTop: 0 }}>{t("wizard.intro")}</p>
+      <p className="wizard-intro">{t("wizard.intro")}</p>
       {SECTIONS.map((section) => (
         <div key={section}>
           <div className="section-title">{t(`wizard.section.${section}`)}</div>
@@ -95,13 +95,12 @@ export default function Wizard({
             ))}
         </div>
       ))}
-      <div className="spacer" />
-      <div className="row">
-        <button className="btn" onClick={onSubmit}>
-          {t("wizard.submit")}
-        </button>
+      <div className="wizard-actions">
         <button className="btn ghost" onClick={onReset}>
           {t("wizard.reset")}
+        </button>
+        <button className="btn" onClick={onSubmit}>
+          {t("wizard.submit")}
         </button>
       </div>
     </div>
